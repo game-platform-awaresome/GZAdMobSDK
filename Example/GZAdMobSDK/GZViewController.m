@@ -7,8 +7,13 @@
 //
 
 #import "GZViewController.h"
+#import "GZBannerAd.h"
 
 @interface GZViewController ()
+
+{
+    GZBannerAd *_bannerAd;
+}
 
 @end
 
@@ -18,6 +23,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    _bannerAd = [GZBannerAd alloc];
+    [_bannerAd getBannerView:CGRectMake(0, 0, GDTMOB_AD_SUGGEST_SIZE_320x50.width, GDTMOB_AD_SUGGEST_SIZE_320x50.height) appkey:@"" placementId:@""];
+    [_bannerAd loadAdAndShow];
 }
 
 - (void)didReceiveMemoryWarning

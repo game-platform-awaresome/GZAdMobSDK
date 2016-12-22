@@ -3,13 +3,13 @@
   "version": "1.0",
   "summary": "Guide for private pods :",
   "description": "Guide for private pods",
-  "homepage": "https://github.com/poormonkey/GZAdMobSDK",
+  "homepage": "https://github.com/poormonkey/GZAdMobSDK/",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "NicolasKim": "jinqiucheng1006@live.cn"
+    "GameZoo": "565705232@qq.cn"
   },
   "source": {
     "git": "https://github.com/poormonkey/GZAdMobSDK.git",
