@@ -1,9 +1,12 @@
 Pod::Spec.new do |spec|
 spec.name             = 'GZAdMobSDK'
 spec.version          = '1.0'
-spec.summary          = 'Guide for private pods :'
+spec.summary          = 'Guide for private pods : 广告聚合sdk'
 spec.description      = <<-DESC
-Guide for private pods
+Testing Private Podspec.
+
+* Markdown format.
+* Don't worry about the indent, we strip it!
 DESC
 spec.homepage         = 'https://github.com/poormonkey/GZAdMobSDK/'
 spec.license          = { :type => 'MIT', :file => 'LICENSE' }
