@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GZAdMobSDK_Example' do
+  pod 'GZAdMobSDK', :path => '../'
+
+  target 'GZAdMobSDK_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+  end
+end

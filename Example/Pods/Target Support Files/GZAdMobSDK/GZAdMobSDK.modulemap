@@ -1,0 +1,6 @@
+framework module GZAdMobSDK {
+  umbrella header "GZAdMobSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

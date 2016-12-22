@@ -1,0 +1,36 @@
+{
+  "name": "GZAdMobSDK",
+  "version": "1.0",
+  "summary": "Guide for private pods :",
+  "description": "Guide for private pods",
+  "homepage": "https://github.com/poormonkey/GZAdMobSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "NicolasKim": "jinqiucheng1006@live.cn"
+  },
+  "source": {
+    "git": "https://github.com/poormonkey/GZAdMobSDK.git",
+    "tag": "1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": [
+    "GZAdMobSDK/Classes/*.{h,m}",
+    "GZAdMobSDK/Classes/ThirdParty/*.{h,m}"
+  ],
+  "vendored_libraries": "GZAdMobSDK/Classes/ThirdParty/*.{a}",
+  "frameworks": [
+    "AdSupport",
+    "CoreLocation",
+    "QuartzCore",
+    "SystemConfiguration",
+    "CoreTelephony",
+    "Security",
+    "StoreKit"
+  ],
+  "libraries": "z"
+}
