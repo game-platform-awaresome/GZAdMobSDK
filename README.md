@@ -77,3 +77,42 @@ pod install
 // banner条被用户关闭时调用
 - (void)bannerViewWillClose;
 ```
+
+###2.2 插屏广告接入
+
+1 . 在想要导入广告的 ViewController 头文件中导入头文件并声明实例:
+
+```
+#import <UIKit/UIKit.h>#import "GZMobInterstitial.h"
+@interface InterstitialViewController:UIViewController<GDTMobInterstitialDelegate>{   GZMobInterstitial *_interstitialObj;}
+```
+
+2 . 初始化并与预加载广告
+
+```
+_interstitialObj = [[GZMobInterstitial alloc] init];
+//初始化
+[_interstitialObj setInterstitialAd:@"1105344611" andPlacementId:@"2030814134092814"];
+//设置委托
+_interstitialObj.delegate = self;
+//设置是否开启gps[可选]
+[_interstitialObj setIsGpsOn:NO];
+//预加载广告
+[_interstitialObj loadAd];
+```
+3 . 在广告加载好之后展现
+
+```
+[_interstitialObj presentFromRootViewController:self];
+```  
+
+4 . 实现 GDTMobInterstitialDelegate 方法:【可选】
+
+```
+// 广告预加载成功回调- (void)interstitialSuccessToLoadAd:(GDTMobInterstitial *)interstitial;// 广告预加载失败回调- (void)interstitialFailToLoadAd:(GDTMobInterstitial *)interstitial error:(NSError *)error;// 插屏广告将要展示回调- (void)interstitialWillPresentScreen:(GDTMobInterstitial *)interstitial;// 插屏广告视图展示成功回调- (void)interstitialDidPresentScreen:(GDTMobInterstitial *)interstitial;// 插屏广告展示结束回调- (void)interstitialDidDismissScreen:(GDTMobInterstitial *)interstitial;// 应用进入后台时回调- (void)interstitialApplicationWillEnterBackground:(GDTMobInterstitial *)interstitial;// 插屏广告曝光时回调- (void) interstitialWillExposure:(GDTMobInterstitial *)interstitial;
+```
+
+备注:
+1) 在一次展现完成后，需要再次调用 loadAd 方法来加载新的广告，用于下次展现。
+
+2) 关于释放，建议在释放 ViewController 之前将_interstitialObj 的 delegate 属性设置为 nil

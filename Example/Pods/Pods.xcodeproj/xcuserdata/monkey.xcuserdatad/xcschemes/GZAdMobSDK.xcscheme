@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6885A8924E98AF6ACDA73827029A972F'
+               BlueprintIdentifier = 'DA297EC0D7F0B43BCDE585D7EDF0D540'
                BlueprintName = 'GZAdMobSDK'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'GZAdMobSDK.framework'>

@@ -8,7 +8,7 @@
 
 @import UIKit;
 #import "GZBannerAd.h"
-#import "GZMobInterstitialAd.h"
+#import "GZMobInterstitial.h"
 
 @interface GZViewController : UIViewController<GZBannerAdDelegate,GZMobInterstitialAdDelegate>
 

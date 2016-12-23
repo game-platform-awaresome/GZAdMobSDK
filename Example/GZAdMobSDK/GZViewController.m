@@ -13,7 +13,7 @@
 
 {
     GZBannerAd *_bannerAd;
-    GZMobInterstitialAd *_interstitialAd;
+    GZMobInterstitial *_interstitialObj;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *showView;
@@ -42,12 +42,12 @@
     
     [_bannerAd loadAdAndShow]; //加载广告并展示
 
-    _interstitialAd = [[GZMobInterstitialAd alloc] init];
-    [_interstitialAd setInterstitialAd:@"1105344611" andPlacementId:@"2030814134092814"];
-    [_interstitialAd setDelegate:self];
-    [_interstitialAd setIsGpsOn:NO];
-    [_interstitialAd loadAd];
-    [_interstitialAd presentFromRootViewController:self];
+    _interstitialObj = [[GZMobInterstitial alloc] init];
+    [_interstitialObj setInterstitialAd:@"1105344611" andPlacementId:@"2030814134092814"];
+    _interstitialObj.delegate = self;
+    [_interstitialObj setIsGpsOn:NO];
+    [_interstitialObj loadAd];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,6 +82,7 @@
 // 广告预加载成功回调
 - (void)interstitialSuccessToLoadAd{
     NSLog(@"INTER ------- interstitialSuccessToLoadAd");
+    [_interstitialObj presentFromRootViewController:self];
 };
 // 广告预加载失败回调
 -(void)interstitialFailToLoadAd:(NSError *)error{

@@ -13,6 +13,7 @@
 #import "GDTBannerAd.h"
 #import "GDTInterstitialAd.h"
 #import "GZBannerAd.h"
+#import "GZMobInterstitial.h"
 #import "GZMobInterstitialAd.h"
 #import "GDTMobBannerView.h"
 #import "GDTMobInterstitial.h"
