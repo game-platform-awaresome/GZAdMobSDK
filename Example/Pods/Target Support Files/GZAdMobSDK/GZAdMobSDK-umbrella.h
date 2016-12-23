@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "GDTBannerAd.h"
 #import "GZBannerAd.h"
 #import "GDTMobBannerView.h"
 #import "GDTMobInterstitial.h"

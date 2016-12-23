@@ -7,13 +7,16 @@
 //
 
 #import "GZViewController.h"
-#import "GZBannerAd.h"
+
 
 @interface GZViewController ()
 
 {
     GZBannerAd *_bannerAd;
+//    GDTMobBannerView *_bannerView; 
 }
+
+@property (weak, nonatomic) IBOutlet UIView *showView;
 
 @end
 
@@ -22,16 +25,52 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    _bannerAd = [GZBannerAd alloc];
-    [_bannerAd getBannerView:CGRectMake(0, 0, GDTMOB_AD_SUGGEST_SIZE_320x50.width, GDTMOB_AD_SUGGEST_SIZE_320x50.height) appkey:@"" placementId:@""];
-    [_bannerAd loadAdAndShow];
+	
+//    _bannerAd = [[GZBannerAd alloc] initWithFrame:CGRectMake(0, 0, GDTMOB_AD_SUGGEST_SIZE_320x50.width, GDTMOB_AD_SUGGEST_SIZE_320x50.height) andAppkeyy:@"100720253" andPlacementId:@"9079537207574943610"];
+
+    _bannerAd = [[GZBannerAd alloc] init];
+    UIView *adView = [_bannerAd getBannerView: CGRectMake(0, 0, GZMOB_AD_SUGGEST_SIZE_320x50.width, GZMOB_AD_SUGGEST_SIZE_320x50.height) andAppkeyy:@"100720253" andPlacementId:@"9079537207574943610"];
+    
+    _bannerAd.delegate = self; // 设置Delegate
+    [_bannerAd setCurrentViewController:self]; //设置当前的ViewController
+    [_bannerAd setInterval:30]; //【可选】设置广告轮播时间;范围为30~120秒，0表示不轮播
+    [_bannerAd setIsGpsOn:NO]; //【可选】开启GPS定位;默认关闭
+    [_bannerAd setShowCloseBtn:YES]; //【可选】展示关闭按钮;默认显示
+    [_bannerAd setIsAnimationOn:YES]; //【可选】开启banner轮播和展现时的动画效果;默认开启
+    
+    [self.view addSubview:adView]; //添加到当前的view中
+    
+    [_bannerAd loadAdAndShow]; //加载广告并展示
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+-(void)bannerViewWillLeaveApplication{
+    NSLog(@"ADBANNER ----------- banner view will leave application");
+}
+
+-(void)bannerViewFailToReceived:(NSError *)error{
+    NSLog(@"ADBANNER ----------- banner view fail to received");
+}
+
+-(void)bannerViewWillExposure{
+    NSLog(@"ADBANNER ----------- banner view will exposure");
+}
+
+-(void)bannerViewDidReceived{
+    NSLog(@"ADBANNER ----------- banner view did received");
+}
+
+-(void)bannerViewWillClose{
+    NSLog(@"ADBANNER ----------- banner view will close");
+}
+
+-(void)bannerViewClicked{
+    NSLog(@"ADBANNER ----------- banner view clicked");
 }
 
 @end

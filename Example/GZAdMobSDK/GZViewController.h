@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
+#import "GZBannerAd.h"
 
-@interface GZViewController : UIViewController
+@interface GZViewController : UIViewController<GZBannerAdDelegate>
 
 @end

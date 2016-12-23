@@ -1,8 +1,8 @@
 {
   "name": "GZAdMobSDK",
   "version": "1.0",
-  "summary": "Guide for private pods :",
-  "description": "Guide for private pods",
+  "summary": "Guide for private pods : 广告聚合sdk",
+  "description": "Testing Private Podspec.\n\n* Markdown format.\n* Don't worry about the indent, we strip it!",
   "homepage": "https://github.com/poormonkey/GZAdMobSDK/",
   "license": {
     "type": "MIT",
