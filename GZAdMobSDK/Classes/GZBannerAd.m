@@ -22,7 +22,7 @@
 -(UIView *)getBannerView:(CGRect)frame andAppkeyy:(NSString *)appkey andPlacementId:(NSString *)placementId {
 
 //        _bannerView = [[GDTMobBannerView alloc] initWithFrame:frame appkey:appkey placementId:placementId];
-    _bannerView = [[GDTMobBannerView alloc] initWithFrame:frame];
+    _bannerView = [[GDTMobBannerView alloc] initWithFrame:frame appkey:appkey placementId:placementId];
     _bannerView.delegate = self;
     return _bannerView;
 }
